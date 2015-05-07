@@ -1186,7 +1186,7 @@ define([
                 helpBlock = domConstruct.create("p", {
                     className: "help-block",
                     innerHTML: lang.trim(helpHTML + " " + availableLength)
-                }, formContent);
+                }, fieldname, "before");
             }
             if (rangeHelpText) {
                 var options = {
