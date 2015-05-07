@@ -57,7 +57,7 @@
       locationDescriptionForOneOption: "Spécifiez l\'emplacement de cette entrée en cliquant/touchant la carte ou en utilisant l\'option suivante.",
       locationDescriptionForNoOption: "Spécifiez l\'emplacement de cette entrée en cliquant/touchant la carte.",
       addressText: "Rechercher",
-      geographic: "Lat/Lon",
+      geographic: "Entrez une Lat/Lon",
       locationTabText: "Emplacement",
       locationPopupTitle: "Emplacement",
       submitButtonText: "Envoyer une entrée",

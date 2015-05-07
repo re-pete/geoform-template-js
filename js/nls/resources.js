@@ -57,7 +57,7 @@ define({
       locationDescriptionForOneOption: "Specify the location for this entry by clicking/tapping the map or by using the following option.",
       locationDescriptionForNoOption: "Specify the location for this entry by clicking/tapping the map.",
       addressText: "Search",
-      geographic: "Lat/Lon",
+      geographic: "Enter a Lat/Lon",
       locationTabText: "Location",
       locationPopupTitle: "Location",
       submitButtonText: "Submit Entry",
