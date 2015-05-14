@@ -26,6 +26,7 @@
     <link id="rtlCSS" rel="stylesheet" />
     <link href="css/select2.css" rel="stylesheet" />
     <link href="js/vendor/touch-spinner/jquery.bootstrap-touchspin.min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="css/wcag.css">
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
     <script src="js/vendor/html5shiv.min.js"></script>
@@ -66,13 +67,41 @@
                 location: package_path + '/views'
             }]
         };
+
+        var getParamFromUrl = function(name,url) {
+            if(!url) {
+                url = window.location.href;
+            }
+            var results = new RegExp('[\\?&]'+name+'=([^&#]*)').exec(url);
+            if(!results) {
+                return undefined;
+            }
+            return results[1] || undefined;
+        }
+
+        // We need to be able to set the locale from the query string.
+        var lang = getParamFromUrl("lang");
+        if(lang) {
+            dojoConfig.locale = lang;
+        }
+        var appId = getParamFromUrl("appid");
+        var otherLangAppId = getParamFromUrl("otherlangappid");
+        // If both appids are set, do the toggle
+        var langToggleLink = document.getElementById("gcwu-gcnb-lang");
+        if(appId && otherLangAppId && langToggleLink) {
+            langToggleLink.firstChild.href += "&appid=" + otherLangAppId + "&otherlangappid=" + appId;
+        } else if(appId && langToggleLink){
+            // Only the original appid is set.  Do the best we can
+            langToggleLink.firstChild.href += "&appid=" + appId;
+        }
     </script>
     <script type="text/javascript" src="//js.arcgis.com/3.13"></script>
     <script type="text/javascript" src="js/vendor/offline/offline.min.js"></script>
     <script type="text/javascript" src="js/offlineOptions.js"></script>
     <script type="text/javascript" src="js/vendor/IndexedDBShim.min.js"></script>
     <script type="text/javascript">
-        require(["config/templateConfig", "application/template", "application/main"], function (templateOptions, Template, Main) {
+        require(["config/templateConfig", "application/template", "application/main"], function (templateOptions, Template, Main, agr) {
+
             // start template
             var myTemplate = new Template(templateOptions);
             // create my main application. Start placing your logic in the main.js file.
