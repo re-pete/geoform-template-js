@@ -67,6 +67,9 @@
             }]
         };
 
+        // Our WET template strips out the body's classes.   Re-add the loading class
+        document.getElementsByTagName("body")[0].className += " app-loading";
+
         var getParamFromUrl = function(name,url) {
             if(!url) {
                 url = window.location.href;
