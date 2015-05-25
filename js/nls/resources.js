@@ -77,6 +77,7 @@ define({
       placeholderLongitude: "Longitude (X)",
       latitude: "Latitude",
       longitude: "Longitude",
+      submitFindAddress: "Search",
       findMyLocation: "Locate Me",
       finding: "Locating&hellip;",
       backToTop: "Back to top",

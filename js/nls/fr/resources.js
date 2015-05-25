@@ -77,6 +77,7 @@
       placeholderLongitude: "Longitude (X)",
       latitude: "Latitude",
       longitude: "Longitude",
+      submitFindAddress: "Recherche",
       findMyLocation: "Localiser mon emplacement",
       finding: "Localisation&hellip;",
       backToTop: "Haut",
