@@ -1851,6 +1851,13 @@ define([
                         this._submitForm();
                     }));
                 }
+                if (submitButtonNode) {
+                    on(submitButtonNode, "keypress", lang.hitch(this, function (evt) {
+                        if(evt.which === 13 || evt.which === 32) { // Enter key or Space key
+                            this._submitForm();
+                        }
+                    }));
+                }
                 // set location options
                 this._populateLocationsOptions();
                 // resize map
